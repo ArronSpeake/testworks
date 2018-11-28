@@ -5,6 +5,18 @@ Simple Python Testing Framework
 Written test functions must be within a class, and the class' name must be passed into the testwork.test function.
 Functions starting with 'DISABLED' will not run.
 
+A normal `assert` statement can be made, or, alternatively the `assertion` class can be imported.
+
+### Assertions
+
+Assertion   | Description
+------------|------------
+`is_true`   | Asserts that a value is true.
+`is_false`  | Asserts that a value is false.
+`are_equal` | Asserts that two values are equal.
+
+An optional `message` argument can also be given, which is displayed when that assertion fails.
+
 ## Example
 ```python
 import testworks
