@@ -22,8 +22,8 @@ def test(classname):
             fx()
             print("PASSED")
             passedTests += 1
-        except AssertionError:
-            print("FAILED")
+        except AssertionError as error:
+            print("FAILED: " + str(error))
         except Exception as error:
-            print("FAILED - An exception was thrown.")
+            print("FAILED: An exception was thrown:\n\t" + str(error))
     print(str(passedTests) + " tests passed out of " + str(testCount) + ". (" + str(testCount - passedTests) + " failed.)")
