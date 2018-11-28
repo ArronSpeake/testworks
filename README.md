@@ -3,9 +3,9 @@ Simple Python Testing Framework
 
 ## Usage
 Written test functions must be within a class, and the class' name must be passed into the testwork.test function.
-Functions starting with 'DISABLED' will not run.
+Functions starting with `DISABLED` will not run.
 
-A normal `assert` statement can be made, or, alternatively the `assertion` class can be imported.
+A normal `assert` statement can be used, or, alternatively the `assertion` class can be imported.
 
 ### Assertions
 
