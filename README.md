@@ -45,5 +45,5 @@ class MyTestClass:
         zero = 0 / 0
 
 testworks.test(MyTestClass)
-input() # Keep the window the results.
+input() # Keeps the window open.
 ```
