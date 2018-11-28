@@ -23,15 +23,8 @@ def __perform_test(function):
     
     return False
 
-def __display_results(testCount, passedTests):
-    print(
-        str(passedTests)
-        + " tests passed out of "
-        + str(testCount)
-        + ". ("
-        + str(testCount - passedTests)
-        + " failed.)"
-    )
+def __display_results(count, passed, failed):
+    print(passed + " tests passed out of " + count + ". (" + failed + " failed.)")
 
 def test(classname):
     assert isclass(classname)
@@ -44,6 +37,8 @@ def test(classname):
         success = __perform_test(tests[i])
         if success: passedTests += 1
     
-    __display_results(testCount, passedTests)
+    failedTests = (testCount - passedTests)
 
-    return testCount - passedTests
+    __display_results(str(testCount), str(passedTests), str(failedTests))
+
+    return failedTests
