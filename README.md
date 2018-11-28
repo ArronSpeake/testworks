@@ -1,5 +1,5 @@
 # testworks
-Simple Python Testing Framework
+Simple Python Testing Utility
 
 ## Usage
 Written test functions must be within a class, and the class' name must be passed into the testwork.test function.
