@@ -10,20 +10,40 @@ def __find_tests(classname):
     print("Found", len(tests), "tests.")
     return tests
 
+def __perform_test(function):
+    print(function.__name__ + ": ", end="")
+    try:
+        function()
+        print("PASSED")
+        return True
+    except AssertionError as error:
+        print("FAILED: " + str(error))
+    except Exception as error:
+        print("FAILED: An exception was thrown:\n\t" + str(error))
+    
+    return False
+
+def __display_results(testCount, passedTests):
+    print(
+        str(passedTests)
+        + " tests passed out of "
+        + str(testCount)
+        + ". ("
+        + str(testCount - passedTests)
+        + " failed.)"
+    )
+
 def test(classname):
     assert isclass(classname)
     tests = __find_tests(classname)
-    testCount = len(tests)
+
     passedTests = 0
+    testCount = len(tests)
+
     for i in range(testCount):
-        fx = tests[i]
-        print(fx.__name__ + ": ", end="")
-        try:
-            fx()
-            print("PASSED")
-            passedTests += 1
-        except AssertionError as error:
-            print("FAILED: " + str(error))
-        except Exception as error:
-            print("FAILED: An exception was thrown:\n\t" + str(error))
-    print(str(passedTests) + " tests passed out of " + str(testCount) + ". (" + str(testCount - passedTests) + " failed.)")
+        success = __perform_test(tests[i])
+        if success: passedTests += 1
+    
+    __display_results(testCount, passedTests)
+
+    return testCount - passedTests
