@@ -36,7 +36,7 @@ class MyTestClass:
         assertion.are_equal(1, 4)
 
     def using_a_new_assertion():
-        assertion.is_false(True)
+        assertion.is_false(True, "Should've been false. Whoops.")
 
     def using_a_new_assertion():
         assertion.is_true(True)
