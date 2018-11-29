@@ -10,7 +10,7 @@ A normal `assert` statement can be used, or, alternatively the `assertion` class
 ### Assertions
 
 Assertion   | Description
-------------|------------
+:-----------|:-----------
 `is_true`   | Asserts that a value is true.
 `is_false`  | Asserts that a value is false.
 `are_equal` | Asserts that two values are equal.
